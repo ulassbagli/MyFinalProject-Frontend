@@ -1,18 +1,27 @@
-import { Component} from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { ProductComponent } from "./components/product/product.component";
+import { Component } from '@angular/core';
 import { CategoryComponent } from "./components/category/category.component";
 import { NaviComponent } from "./components/navi/navi.component";
-import { CommonModule } from '@angular/common';
+import { RouterOutlet } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { AppModule } from "./app.module";
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
-  imports: [RouterOutlet, ProductComponent, CategoryComponent, NaviComponent, CommonModule]
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css'],
+    standalone: true,
+    providers: [],
+    imports: [
+        AppComponent,
+        CategoryComponent,
+        NaviComponent,
+        RouterOutlet,
+        HttpClientModule,
+        AppModule
+    ]
 })
+
 export class AppComponent {
   title = 'northwind';
-  user: string = "Ulaş Bağlı"
+  user: string = "Ulaş Bağlı";
 }
